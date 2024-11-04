@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;500;700;900&display=swap');
+
+.TransferenciasContainer {
+    font-family: 'Montserrat', sans-serif;
+    max-width: 100%;
+    text-align: center;
+    padding: 20px;
+    background-color: brown; /* Color de fondo */
+    border-radius: 10px;
+    box-shadow: 0 10px 18px rgba(0, 0, 0, 0.2);
+    border: 10px;
+    border-color: white;
+    margin-top: 20px;
+}
+
+.TransferenciasContainer h1 {
+    color: white;
+}
+
+.inputGroup {
+    margin: 10px 0;
+    padding: 1px; 
+    width: 100%;
+}
+
+h1 {
+    color: white;
+    position: relative;
+    top: 10px;
+}
+
+input {
+    border-radius: 1%;
+    border: 1px solid black; 
+    color: black;
+    font-family: 'Montserrat', sans-serif;
+    margin: 10px 0;
+    padding: 8px;
+    width: 100%;
+}
+
+button {
+    font-family: 'Montserrat', sans-serif;
+    padding: 10px;
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    border: none;
+    cursor: pointer;
+}
+
+@media (max-width: 600px) {
+    .TransferenciasContainer {
+        height: calc(100vh - 50px); /* Ajusta la altura para pantallas pequeñas */
+        margin-top: 50px;
+        padding: 5px;
+    }
+
+    li {
+        padding: 8px; /* Ajusta el padding de los elementos de la lista */
+    }
+}
+
+@media (max-width: 768px) {
+    .TransferenciasContainer {
+        height: calc(100vh - 55px); /* Ajusta la altura para pantallas medianas */
+        margin-top: 55px;
+    }
+}

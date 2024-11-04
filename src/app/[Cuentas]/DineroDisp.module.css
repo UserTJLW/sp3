@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;500;700;900&display=swap');
+
+.dineroContainer {
+    color: white;
+    padding: 0;
+    max-width: 500px;
+    text-align: center;
+    padding: 20px;
+    background-color: brown;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'Montserrat', sans-serif; /* Actualizado a Montserrat */
+}
+
+/* Estilo específico para el dineroDisp */
+.dineroDisp {
+    border-radius: 20px;
+    border: 1px solid rgb(255, 255, 255); /* Borde blanco */
+    box-shadow: 0 10px 18px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    padding: 10px;
+}
+
+.dineroDisp h2 {
+    background-color: inherit; /* Hereda el color de fondo del contenedor */
+    font-family: 'Montserrat', sans-serif; /* Actualizado a Montserrat */
+    font-size: 20px;
+}
+
+.dineroDisp p {
+    font-size: 30px;
+    font-style: italic;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+/* Media Query para dispositivos móviles */
+@media (max-width: 600px) {
+    .dineroContainer {
+        padding: 15px; /* Reduce el padding en pantallas pequeñas */
+        font-size: 16px; /* Reduce el tamaño de la fuente */
+    }
+
+    .dineroDisp {
+        padding: 8px; /* Reduce el padding dentro del dineroDisp */
+    }
+
+    .dineroDisp h2 {
+        font-size: 18px; /* Reduce el tamaño de la fuente del título */
+    }
+
+    .dineroDisp p {
+        font-size: 24px; /* Reduce el tamaño de la fuente del párrafo */
+    }
+}
+
+/* Media Query para tabletas */
+@media (max-width: 768px) {
+    .dineroContainer {
+        padding: 20px; /* Ajusta el padding para pantallas medianas */
+        font-size: 18px; /* Ajusta el tamaño de la fuente */
+    }
+
+    .dineroDisp {
+        padding: 9px; /* Ajusta el padding dentro del dineroDisp */
+    }
+
+    .dineroDisp h2 {
+        font-size: 19px; /* Ajusta el tamaño de la fuente del título */
+    }
+
+    .dineroDisp p {
+        font-size: 26px; /* Ajusta el tamaño de la fuente del párrafo */
+    }
+}
+
+
+.message {
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 4px;
+    background-color: #d4edda; /* Verde claro para mensajes exitosos */
+    color: #155724; /* Verde oscuro para el texto */
+    border: 1px solid #c3e6cb; /* Verde más claro para el borde */
+    font-size: 16px;
+    z-index: 10001;
+}
