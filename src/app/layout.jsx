@@ -1,9 +1,8 @@
-// app/layout.js
 import React from 'react';
-import Sidebar from '../[Sidebar]/sidebar';
-import Styles from './Layout.module.css';
-import Header from '../[Header]/header';
-import Footer from '../[Footer]/Footer';
+import Sidebar from './[Sidebar]/sidebar';
+import Styles from './[Layout]/Layout.module.css';
+import Header from './[Header]/header';
+import Footer from './[Footer]/Footer';
 
 const Layout = ({ children }) => {
   return (

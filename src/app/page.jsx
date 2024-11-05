@@ -1,6 +1,6 @@
 "use client";
 import React from 'react';
-import { useRouter } from 'next/navigation';
+import { usePathname } from 'next/navigation';
 import { DineroProvider } from './[Cuentas]/DineroContext';
 import { AuthProvider } from './[Login]/AuthContext'; 
 import Layout from './[Layout]/layout';
@@ -16,43 +16,22 @@ import ProtectedRoute from './[Login]/ProtectedRoute';
 import LandPage from './[Inicio]/Inicio';
 import Head from 'next/head';
 import Factura from './[Facturas]/Facturas';
-import Historial from './[Facturas]/Historial';
 
-const index = () => {
-  const router = useRouter();
+export default function Page() {
+  const pathname = usePathname();
 
   const element = (
     <Layout>
-      {
-        router.pathname === '/inicio' && <ProtectedRoute element={<LandPage />} />
-      }
-      {
-        router.pathname === '/login' && <Login />
-      }
-      {
-        router.pathname === '/signup' && <Signup />
-      }
-      {
-        router.pathname === '/prestamos' && <ProtectedRoute element={<Prestamo />} />
-      }
-      {
-        router.pathname === '/transferencias' && <ProtectedRoute element={<DineroDisp />} />
-      }
-      {
-        router.pathname === '/cuentas' && <ProtectedRoute element={<Cuentas />} />
-      }
-      {
-        router.pathname === '/tarjetas' && <ProtectedRoute element={<Tarjetas />} />
-      }
-      {
-        router.pathname === '/convertidor' && <ProtectedRoute element={<Convert />} />
-      }
-      {
-        router.pathname === '/helpcenter' && <HelpCenter />
-      }
-      {
-        router.pathname === '/facturas' && <Factura factura={undefined} />
-      }
+      {pathname === '/inicio' && <ProtectedRoute element={<LandPage />} />}
+      {pathname === '/login' && <Login />}
+      {pathname === '/signup' && <Signup />}
+      {pathname === '/prestamos' && <ProtectedRoute element={<Prestamo />} />}
+      {pathname === '/transferencias' && <ProtectedRoute element={<DineroDisp />} />}
+      {pathname === '/cuentas' && <ProtectedRoute element={<Cuentas />} />}
+      {pathname === '/tarjetas' && <ProtectedRoute element={<Tarjetas />} />}
+      {pathname === '/convertidor' && <ProtectedRoute element={<Convert />} />}
+      {pathname === '/helpcenter' && <HelpCenter />}
+      {pathname === '/facturas' && <Factura factura={undefined} />}
     </Layout>
   );
 
@@ -60,7 +39,6 @@ const index = () => {
     <>
       <Head>
         <meta name="description" content="timebank" />
-        <meta name="description" content="banco" />
         <meta name="keywords" content="banco, homebanking, prestamos, dinero, convertidor, moneda, impuestos, rentas, tarjetas, comprar, creditos" />
       </Head>
       <AuthProvider>
@@ -70,9 +48,8 @@ const index = () => {
       </AuthProvider>
     </>
   );
-};
+}
 
-export default index;
 
 
 

@@ -5,7 +5,9 @@ import styles from './Inicio.module.css';
 
 const LandPage = () => {
     const router = useRouter();
-    const nombreUsuario = typeof window !== 'undefined' ? localStorage.getItem('usuario')?.split(': ')[1] : '';
+    const nombreUsuario = typeof window !== 'undefined' && localStorage.getItem('usuario')
+        ? localStorage.getItem('usuario').split(': ')[1]
+        : 'Usuario';
 
     const handleLogout = () => {
         if (typeof window !== 'undefined') {
@@ -25,3 +27,4 @@ const LandPage = () => {
 };
 
 export default LandPage;
+
