@@ -1,7 +1,7 @@
 // DineroDisp.js
 import React from 'react';
 import Dinero from './dinero';
-import Transferencias from '../Transferencias/Transferencias';
+import Transferencias from '../[Transferencias]/Transferencias';
 import Message from './Message';
 import HistorialMovimientos from './HistorialMovimientos';
 import styles from './DineroDisp.module.css';

@@ -1,14 +1,15 @@
+"use client";
 import React, { useState } from "react";
-import { useNavigate } from 'react-router-dom';
-import { useAuth } from './AuthContext'; // Asegúrate de que la ruta sea correcta
-import './Login.css'
+import { useRouter } from 'next/navigation';
+import { useAuth } from './AuthContext';
+import Styles from './Login.module.css';
 
 function Signup() {
     const [nombreUsuario, setNombreUsuario] = useState('');
     const [contrasenia, setContrasenia] = useState('');
     const [acepto, setAcepto] = useState(false);
     const [cuentaCreada, setCuentaCreada] = useState(false);
-    const navigate = useNavigate();
+    const router = useRouter(); 
     const { login } = useAuth();
 
     const manejoNombreUsuario = (event) => setNombreUsuario(event.target.value);
@@ -27,7 +28,7 @@ function Signup() {
         setCuentaCreada(true);
     };
 
-    const manejoVolverHome = () => navigate('/login');
+    const manejoVolverHome = () => router.push('/login'); 
 
     return (
         <div className="crearC">
@@ -75,7 +76,6 @@ function Signup() {
                                     required
                                 /> Acepto los términos y condiciones
                             </label>
-
                         </div>
                         <button type="submit">Crear cuenta</button>
                     </form>

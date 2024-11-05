@@ -5,7 +5,7 @@
     max-width: 100%;
     text-align: center;
     padding: 20px;
-    background-color: brown; /* Color de fondo */
+    background-color: brown; 
     border-radius: 10px;
     box-shadow: 0 10px 18px rgba(0, 0, 0, 0.2);
     border: 10px;
@@ -17,19 +17,13 @@
     color: white;
 }
 
-.inputGroup {
+.TransferenciasContainer .inputGroup {
     margin: 10px 0;
     padding: 1px; 
     width: 100%;
 }
 
-h1 {
-    color: white;
-    position: relative;
-    top: 10px;
-}
-
-input {
+.TransferenciasContainer input {
     border-radius: 1%;
     border: 1px solid black; 
     color: black;
@@ -39,7 +33,7 @@ input {
     width: 100%;
 }
 
-button {
+.TransferenciasContainer button {
     font-family: 'Montserrat', sans-serif;
     padding: 10px;
     background-color: rgb(255, 255, 255);
@@ -50,19 +44,19 @@ button {
 
 @media (max-width: 600px) {
     .TransferenciasContainer {
-        height: calc(100vh - 50px); /* Ajusta la altura para pantallas pequeñas */
+        height: calc(100vh - 50px); 
         margin-top: 50px;
         padding: 5px;
     }
 
-    li {
-        padding: 8px; /* Ajusta el padding de los elementos de la lista */
+    .TransferenciasContainer li {
+        padding: 8px; 
     }
 }
 
 @media (max-width: 768px) {
     .TransferenciasContainer {
-        height: calc(100vh - 55px); /* Ajusta la altura para pantallas medianas */
+        height: calc(100vh - 55px); 
         margin-top: 55px;
     }
 }

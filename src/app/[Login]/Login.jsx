@@ -1,13 +1,14 @@
+"use client";
 import { useState } from 'react';
-import { useRouter } from 'next/router';
+import { useRouter } from 'next/navigation';
 import { useAuth } from './AuthContext'; 
-import styles from '../styles/Login.module.css';
+import styles from './Login.module.css';
 
 function Login() {
     const [nombreUsuario, setNombreUsuario] = useState('');
     const [contrasenia, setContrasenia] = useState('');
     const [mensajeError, setMensajeError] = useState('');
-    const [cargando, setCargando] = useState(false); // Estado para manejar la carga
+    const [cargando, setCargando] = useState(false); 
     const router = useRouter();
     const { login } = useAuth();
 
@@ -16,26 +17,25 @@ function Login() {
 
     const handleSubmit = async (event) => {
         event.preventDefault();
-        setCargando(true); // Activar el estado de carga
+        setCargando(true);
 
         const NombreUsuarioGuardado = localStorage.getItem('usuario')?.split(': ')[1];
         const ContraseniaGuardado = localStorage.getItem('contrasenia')?.split(': ')[1];
 
-        // Verifica si los datos están almacenados
         if (!NombreUsuarioGuardado || !ContraseniaGuardado) {
             setMensajeError('Cuenta no encontrada, prueba creando tu cuenta.');
-            setCargando(false); // Desactivar el estado de carga
+            setCargando(false); 
             return;
         }
 
         if (nombreUsuario === NombreUsuarioGuardado && contrasenia === ContraseniaGuardado) {
-            login(); // Aquí podría ir una función para manejar la sesión de usuario
-            router.push('/inicio'); // Redirige a la página principal después de iniciar sesión
+            login(); 
+            router.push('/inicio'); 
         } else {
             setMensajeError('Nombre de usuario o contraseña incorrectos.');
         }
 
-        setCargando(false); // Desactivar el estado de carga al finalizar
+        setCargando(false); 
     };
 
     return (

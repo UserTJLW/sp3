@@ -1,32 +1,39 @@
 "use client";
 import React, { useState } from 'react';
-import { useDinero } from '../^[Cuentas]/DineroContext';
+import { useDinero } from '../[Cuentas]/DineroContext';
 import styles from './Transferencias.module.css'; 
-/*import DynamicComponent from '../Render/DynamicComponent';*/ 
+//import DynamicComponent from '../Render/DynamicComponent'; 
 
 const Transferencias = () => {
     const [usuario, setUsuario] = useState('');
     const [monto, setMonto] = useState('');
+    const [error, setError] = useState('');
     const { handleActualizarDinero } = useDinero();
 
     const handleSubmit = (e) => {
         e.preventDefault();
         const montoNumero = Number(monto);
-        if (isNaN(montoNumero) || montoNumero <= 0) {
-            alert('Por favor, ingresa un monto válido.');
+
+        if (!usuario.trim()) {
+            setError('Por favor, ingresa un destinatario.');
             return;
         }
-        handleActualizarDinero(montoNumero, usuario);
+        if (isNaN(montoNumero) || montoNumero <= 0) {
+            setError('Por favor, ingresa un monto válido.');
+            return;
+        }
 
-        
+        handleActualizarDinero(montoNumero, usuario);
         setUsuario('');
         setMonto('');
+        setError(''); 
     };
 
     return (
         <div className={styles.TransferenciasContainer}> 
             <form onSubmit={handleSubmit}>
                 <h1>Nueva transferencia:</h1>
+                {error && <p style={{ color: 'red' }}>{error}</p>}
                 <div className={styles.inputGroup}> 
                     <input
                         type="text"
@@ -52,3 +59,4 @@ const Transferencias = () => {
 };
 
 export default Transferencias;
+

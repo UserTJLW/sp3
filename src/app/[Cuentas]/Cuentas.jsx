@@ -1,8 +1,6 @@
-// components/Cuentas.js
 import React from 'react';
-import { useDinero } from '../context/DineroContext'; // Ajusta la ruta si es necesario
-import Cuenta from './Cuenta';
-import styles from '../styles/Cuentas.module.css';
+import { useDinero } from './DineroContext'; 
+import styles from './cuentas.module.css';
 
 
 const Cuenta = ({ title, amount, currency }) => {
@@ -16,7 +14,7 @@ const Cuenta = ({ title, amount, currency }) => {
 
 
 const Cuentas = () => {
-  const { dinero } = useDinero(); // Obtén el dinero del contexto
+  const { dinero } = useDinero(); 
 
   return (
     <div className={styles.cuentasContainer}>

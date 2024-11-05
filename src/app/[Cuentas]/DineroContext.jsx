@@ -1,10 +1,10 @@
-// DineroContext.js
+"use client";
 import React, { createContext, useState, useContext } from 'react';
 
-// Crea el contexto
+
 const DineroContext = createContext();
 
-// Crea un proveedor de contexto
+
 export const DineroProvider = ({ children }) => {
     const [dinero, setDinero] = useState(10400);
     const [movimientos, setMovimientos] = useState([]);
@@ -31,5 +31,5 @@ export const DineroProvider = ({ children }) => {
     );
 };
 
-// Custom hook para usar el contexto
+
 export const useDinero = () => useContext(DineroContext);

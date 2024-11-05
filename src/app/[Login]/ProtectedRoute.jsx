@@ -1,11 +1,20 @@
-import React from 'react';
-import { Navigate } from 'react-router-dom';
-import { useAuth } from './AuthContext'; // Asegúrate de que la ruta sea correcta
+"use client";
+import React, { useEffect } from 'react';
+import { useRouter } from 'next/navigation';
+import { useAuth } from './AuthContext'; 
 
-const ProtectedRoute = ({ element }) => {
+const ProtectedRoute = ({ children }) => {
   const { isAuthenticated } = useAuth();
+  const router = useRouter();
 
-  return isAuthenticated ? element : <Navigate to="/login" />;
+  useEffect(() => {
+    if (!isAuthenticated) {
+      router.push('/login'); 
+    }
+  }, [isAuthenticated, router]);
+
+  return isAuthenticated ? children : null; 
 };
 
 export default ProtectedRoute;
+

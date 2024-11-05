@@ -1,7 +1,7 @@
-// components/LandPage.js
+"use client";
 import React from 'react';
-import { useRouter } from 'next/router';
-import styles from '../styles/Landpage.module.css';
+import { useRouter } from 'next/navigation'; 
+import styles from './Inicio.module.css';
 
 const LandPage = () => {
     const router = useRouter();

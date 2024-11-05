@@ -1,3 +1,4 @@
+"use client";
 import React, { useState } from 'react';
 import styles from './HelpCenter.module.css'; 
 
@@ -7,9 +8,10 @@ const HelpCenter = () => {
   const [submitted, setSubmitted] = useState(false);
 
   const faqs = [
-    { question: '¿Cómo puedo realizar una transferencia?', answer: 'Puedes ingresar a la seccion Transferencias e ingresar los datos necesarios.' },
-    { question: '¿Cual es el horario de atención de Timex?', answer: 'El horario de atencion es de 9 AM a 18 PM.' },
-    { question: '¿Donde puedo comunicarme con Time Bank?', answer: 'Dejanos tu mensaje y contestaremos a la brevedad'}]
+    { question: '¿Cómo puedo realizar una transferencia?', answer: 'Puedes ingresar a la sección Transferencias e ingresar los datos necesarios.' },
+    { question: '¿Cuál es el horario de atención de Timex?', answer: 'El horario de atención es de 9 AM a 6 PM.' },
+    { question: '¿Dónde puedo comunicarme con Time Bank?', answer: 'Déjanos tu mensaje y contestaremos a la brevedad.' }
+  ];
 
   const handleSearchChange = (e) => setSearchTerm(e.target.value);
 
@@ -30,7 +32,7 @@ const HelpCenter = () => {
 
   return (
     <div className={styles.helpCenter}>
-      <h1>Centro de Ayuda Time Bank</h1>
+      <h1 className={styles.title}>Centro de Ayuda Time Bank</h1>
 
       <div className={styles.searchSection}>
         <input
@@ -42,7 +44,7 @@ const HelpCenter = () => {
       </div>
 
       <div className={styles.faqSection}>
-        <h2>Preguntas Frecuentes</h2>
+        <h2 className={styles.faqTitle}>Preguntas Frecuentes</h2>
         {filteredFaqs.length > 0 ? (
           <ul>
             {filteredFaqs.map((faq, index) => (
@@ -58,7 +60,7 @@ const HelpCenter = () => {
       </div>
 
       <div className={styles.contactSection}>
-        <h2>¿Necesitas más ayuda? Contáctanos</h2>
+        <h2 className={styles.contactTitle}>¿Necesitas más ayuda? Contáctanos</h2>
         {submitted ? (
           <p>Gracias por tu mensaje, nos pondremos en contacto contigo pronto.</p>
         ) : (

@@ -1,5 +1,6 @@
+"use client";
 import React, { useState } from 'react';
-import styles from './prestamo.module.css';
+import styles from './Prestamo.module.css';
 
 const Prestamo = () => {
   const [loanAmount, setLoanAmount] = useState(0);
